@@ -1,7 +1,7 @@
 {
-  "name": "deep-camel-case-keys",
+  "name": "deeply-convert-keys",
   "version": "1.0.0",
-  "description": "Recursively convert object keys to camelCase",
+  "description": "Recursively convert object keys to camelCase, snake_case, kebab-case, and more",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -16,10 +16,16 @@
     "dev": "tsc --watch"
   },
   "keywords": [
+    "camelCase",
+    "snake_case",
+    "kebab-case",
+    "PascalCase",
+    "CONSTANT_CASE",
     "camelcase",
     "camel-case",
     "object",
     "keys",
+    "case-conversion",
     "transform",
     "deep",
     "recursive",
@@ -41,10 +47,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/agoodkind/deep-camel-case-keys.git"
+    "url": "https://github.com/agoodkind/deeply-convert-keys.git"
   },
   "bugs": {
-    "url": "https://github.com/agoodkind/deep-camel-case-keys/issues"
+    "url": "https://github.com/agoodkind/deeply-convert-keys/issues"
   },
-  "homepage": "https://github.com/agoodkind/deep-camel-case-keys#readme"
+  "homepage": "https://github.com/agoodkind/deeply-convert-keys#readme"
 }
