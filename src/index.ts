@@ -2,14 +2,27 @@
  * Converts a string to camelCase
  */
 const toCamelCase = (str: string): string => {
-  return str.replace(/[-_]([a-z])/g, (_, char) => char.toUpperCase());
+  // Handle leading underscore or hyphen
+  const leadingChar = str.match(/^[-_]+/)?.[0] || '';
+  const withoutLeading = str.slice(leadingChar.length);
+  
+  // Convert the rest to camelCase
+  const converted = withoutLeading.replace(/[-_]+([a-zA-Z])/g, (_, char) => char.toUpperCase());
+  
+  return leadingChar + converted;
 };
 
 /**
  * Type guard to check if value is a plain object
  */
 const isPlainObject = (value: unknown): value is Record<string, unknown> => {
-  return value !== null && typeof value === "object" && !Array.isArray(value);
+  if (value === null || typeof value !== "object" || Array.isArray(value)) {
+    return false;
+  }
+  
+  // Check if it's a plain object (not a Date, RegExp, etc.)
+  const proto = Object.getPrototypeOf(value);
+  return proto === Object.prototype || proto === null;
 };
 
 /**

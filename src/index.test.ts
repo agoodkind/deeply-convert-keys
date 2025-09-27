@@ -275,7 +275,7 @@ describe('deepCamelCaseKeys', () => {
         created_at: date,
         updated_at: date
       };
-      const result = deepCamelCaseKeys(input);
+      const result = deepCamelCaseKeys(input) as any;
       expect(result).toEqual({
         createdAt: date,
         updatedAt: date
@@ -291,7 +291,7 @@ describe('deepCamelCaseKeys', () => {
       const input = {
         custom_instance: instance
       };
-      const result = deepCamelCaseKeys(input);
+      const result = deepCamelCaseKeys(input) as any;
       expect(result).toEqual({
         customInstance: instance
       });
